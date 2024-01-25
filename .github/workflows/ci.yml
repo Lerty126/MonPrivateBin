@@ -2,7 +2,7 @@ name: Yghore et 🐻
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
 
