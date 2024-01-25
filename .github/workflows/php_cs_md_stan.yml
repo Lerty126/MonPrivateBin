@@ -5,19 +5,23 @@ on:
     branches: [ "main" ]
     
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        php-versions: ['8.2']
+    name: PHP ${{ matrix.php-versions }} unit tests on ${{ matrix.operating-system }}
+    env:
+      extensions: gd, sqlite3
+      extensions-cache-key-name: phpextensions
+      
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+    - name: Install composer
+      run: composer install --prefer-dist --no-dev
 
-      - name: Composer install
-        uses: php-actions/composer@v6
+    - name: Setup PHP Code Sniffer 👃👃👃
+      run: composer require "squizlabs/php_codesniffer=*"
 
-      - name: PHP Mess Detector
-        uses: php-actions/phpmd@v1
-        with:
-          php_version: 8.1
-          path: src/
-          output: text
-          ruleset: test/phpmd/ruleset.xml
+    - name: Run Code Sniffer
+      run: ./vendor/bin/phpcs **/*.php --generator=markdown
