@@ -12,5 +12,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - uses: php-actions/composer@v6
-    - uses: php-actions/phpunit@v3
+    
+    - name: Tests unitaires
+      uses: php-actions/phpunit@v3
+      with:
+       version: 9.6
+       bootstrap: vendor/autoload.php
+       configuration: test/phpunit.xml
+       args: --coverage-text
