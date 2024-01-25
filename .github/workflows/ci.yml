@@ -16,7 +16,7 @@ jobs:
     - uses: php-actions/composer@v6
 
     - name: AHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-      run: composer require google/cloud-storage:1.32.0
+      run: composer require google/cloud-storage
     
     - name: Tests unitaires
       uses: php-actions/phpunit@v3
