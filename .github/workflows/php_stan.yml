@@ -1,0 +1,27 @@
+name: PHP STAN
+
+on:
+  push:
+    branches: [ "main" ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['8.2']
+    name: PHP ${{ matrix.php-versions }} unit tests on ${{ matrix.operating-system }}
+    env:
+      extensions: gd, sqlite3
+      extensions-cache-key-name: phpextensions
+      
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install composer
+      run: composer install --prefer-dist --no-dev
+
+    - name: Setup PHP Mess Detector
+      run: composer require "phpstan/phpstan"
+
+    - name: Run Mess Detector
+      run: ./vendor/bin/phpstan analyse ./ >> $GITHUB_STEP_SUMMARY
