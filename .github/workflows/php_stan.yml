@@ -20,8 +20,8 @@ jobs:
     - name: Install composer
       run: composer install --prefer-dist --no-dev
 
-    - name: Setup PHP Mess Detector
+    - name: Setup PHP STAN
       run: composer require "phpstan/phpstan"
 
-    - name: Run Mess Detector
-      run: ./vendor/bin/phpstan --no-progress analyse ./ || true &> $GITHUB_STEP_SUMMARY
+    - name: Run STAN
+      run: ./vendor/bin/phpstan --no-progress analyse ./ || true
