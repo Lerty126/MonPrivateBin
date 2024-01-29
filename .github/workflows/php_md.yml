@@ -18,10 +18,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install composer
-      run: composer install --prefer-dist --no-dev && npm i @wcj/html-to-markdown-cli -g
+      run: composer install --prefer-dist --no-dev
 
     - name: Setup PHP Mess Detector
       run: composer require "phpmd/phpmd"
 
     - name: Run Mess Detector
-      run: ./vendor/bin/phpmd **/*.php --ignore-violations-on-exit --reportfile "test.html" html codesize && html-to-markdown test.html >> $GITHUB_STEP_SUMMARY
+      run: ./vendor/bin/phpmd **/*.php --ignore-violations-on-exit html codesize >> $GITHUB_STEP_SUMMARY
