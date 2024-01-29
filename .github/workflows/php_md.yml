@@ -24,4 +24,4 @@ jobs:
       run: composer require "phpmd/phpmd"
 
     - name: Run Mess Detector
-      run: ./vendor/bin/phpmd **/*.php --ignore-violations-on-exit --reportfile "app/test.html" html codesize && html-to-markdown app/test.html >> $GITHUB_STEP_SUMMARY
+      run: ./vendor/bin/phpmd **/*.php --ignore-violations-on-exit --reportfile "test.html" html codesize && html-to-markdown test.html >> $GITHUB_STEP_SUMMARY
