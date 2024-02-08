@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-        "Name": "privatebin/s3"
+        "Name": "privatebin/unit-s3:1.6.0"
     },
     "Ports": [
         {"ContainerPort": "8080"}
