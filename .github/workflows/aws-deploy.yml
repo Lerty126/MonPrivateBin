@@ -25,6 +25,7 @@ jobs:
        environment_name: PrivateBean-env
        version_label: version-${{ github.sha }}
        use_existing_version_if_available: true
+       wait_for_environment_recovery: 120
        region: eu-west-3
        deployment_package: deploy.zip
  
