@@ -21,8 +21,8 @@ jobs:
      with:
        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-       application_name: admin-client
-       environment_name: Adminclient-env
+       application_name: Private Bean
+       environment_name: PrivateBean-env
        version_label: 12345
        use_existing_version_if_available: true
        region: eu-west-3
