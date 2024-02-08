@@ -24,7 +24,7 @@ jobs:
        application_name: Private Bean
        environment_name: PrivateBean-env
        version_label: 12345
-       use_existing_version_if_available: true
+       use_existing_version_if_available: false
        region: eu-west-3
        deployment_package: deploy.zip
  
