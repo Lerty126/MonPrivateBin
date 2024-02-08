@@ -23,7 +23,7 @@ jobs:
        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
        application_name: Private Bean
        environment_name: PrivateBean-env
-       version_label: 12346
+       version_label: 12347
        use_existing_version_if_available: true
        region: eu-west-3
        deployment_package: deploy.zip
