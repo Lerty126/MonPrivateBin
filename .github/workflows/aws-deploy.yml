@@ -25,6 +25,6 @@ jobs:
        environment_name: Adminclient-env
        version_label: ${{ env.PIPELINE_ID }}
        use_existing_version_if_available: true
-       region: ${{ env.AWS_REGION }}
+       region: eu-west-3
        deployment_package: deploy.zip
  
